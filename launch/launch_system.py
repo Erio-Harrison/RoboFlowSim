@@ -11,6 +11,7 @@ def generate_launch_description():
     rviz_config_path = os.path.join(current_dir, '..', 'rviz2', 'gas_flow_config.rviz')
 
     return LaunchDescription([
+
         # GPS 发布器节点
         Node(
             package='gps_location',
@@ -37,6 +38,16 @@ def generate_launch_description():
             package='visualization',
             executable='gps_visualizer',
             name='gps_visualizer'
+        ),
+        Node(
+            package='visualization',
+            executable='realistic_gas_diffusion',
+            name='realistic_gas_diffusion'
+        ),
+        Node(
+            package='visualization',
+            executable='gas_diffusion_2d',
+            name='gas_diffusion_2d'
         ),
 
         # 启动 RViz2 并加载配置文件

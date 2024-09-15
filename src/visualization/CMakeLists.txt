@@ -18,9 +18,17 @@ ament_target_dependencies(gas_flow_visualizer rclcpp visualization_msgs)
 add_executable(gps_visualizer src/gps_visualizer.cpp)
 ament_target_dependencies(gps_visualizer rclcpp visualization_msgs geometry_msgs)
 
+add_executable(realistic_gas_diffusion src/realistic_gas_diffusion.cpp)
+ament_target_dependencies(realistic_gas_diffusion rclcpp visualization_msgs)
+
+add_executable(gas_diffusion_2d src/gas_diffusion_2d.cpp)
+ament_target_dependencies(gas_diffusion_2d rclcpp visualization_msgs)
+
 install(TARGETS
   gas_flow_visualizer
   gps_visualizer
+  realistic_gas_diffusion
+  gas_diffusion_2d
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
